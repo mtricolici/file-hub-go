@@ -37,12 +37,11 @@ func Get() *Config {
 		cfg_instance = &Config{
 			yaml: &YamlConfigFile{},
 		}
-		cfg_instance.loadConfig()
 	})
 	return cfg_instance
 }
 
-func (c *Config) loadConfig() {
+func (c *Config) LoadConfig() {
 	var filePath string
 	if path, ok := os.LookupEnv(CONFIG_PATH_ENV_VAR); ok {
 		filePath = helpers.ExpandHomePath(path)
