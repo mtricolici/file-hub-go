@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/mtricolici/file-hub-go/config"
+	"github.com/mtricolici/file-hub-go/web"
 )
 
 func main() {
@@ -12,7 +12,5 @@ func main() {
 	os.Setenv("CONFIG_PATH", "~/Projects/file-hub-go/config-sample.yml")
 	config.Get().LoadConfig()
 
-	listen := config.Get().ListenInterface()
-	port := config.Get().ListenPort()
-	fmt.Printf("listen on '%s:%d'\n", listen, port)
+	web.InitAndStart()
 }
