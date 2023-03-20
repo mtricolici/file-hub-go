@@ -45,6 +45,7 @@ func InitAndStart() {
 	app.Use(sess.Handler())
 
 	// set templates and assets directory
+	app.Favicon(config.Get().FavoriteIconPath())
 	app.RegisterView(iris.HTML(config.Get().TemplatesDir(), ".html"))
 	app.HandleDir("/assets", iris.Dir(config.Get().AssetsDir()))
 

@@ -3,6 +3,7 @@ package config
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 	"sync"
 
 	"github.com/mtricolici/file-hub-go/helpers"
@@ -84,4 +85,8 @@ func (c *Config) TemplatesDir() string {
 
 func (c *Config) AssetsDir() string {
 	return helpers.ExpandHomePath(c.yaml.AssetsDir)
+}
+
+func (c *Config) FavoriteIconPath() string {
+	return filepath.Join(c.AssetsDir(), "favicon.ico")
 }
