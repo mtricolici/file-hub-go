@@ -6,6 +6,11 @@ import (
 	"github.com/kataras/iris/v12/sessions"
 )
 
+type LoginResponse struct {
+	Success bool   `json:"success"`
+	Message string `json:"message"`
+}
+
 type LoginController struct {
 	Ctx iris.Context
 }
@@ -23,9 +28,9 @@ func (c *LoginController) Post() {
 	if username == "admin" && password == "admin" {
 		session := sessions.Get(c.Ctx)
 		session.Set("uid", 22)
-		c.Ctx.Redirect("/")
+		c.Ctx.JSON(LoginResponse{Success: true, Message: "ok"})
+
 	} else {
-		c.Ctx.ViewData("Error", "Invalid username or password")
-		c.Ctx.View("login.html")
+		c.Ctx.JSON(LoginResponse{Success: false, Message: "invalid username or password"})
 	}
 }
