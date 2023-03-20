@@ -10,9 +10,11 @@ $("#login-button").click(function(event){
         //alert(status) // true/false
         //alert(JSON.stringify(data));
         if (data.success) {
-            location.href = "/"
+            location.href = "/";
         } else {
-            alert(data.message)
+            $('#error').text(data.message);
+            $("#error").fadeIn();
+            $("#error").delay(3000).fadeOut();
         }
     });
 
