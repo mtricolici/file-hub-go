@@ -78,5 +78,5 @@ func (c *Config) ListenPort() int {
 }
 
 func (c *Config) TemplatesDir() string {
-	return helpers.ExpandHomePath(c.yaml.TemplateDir) + "/*.html"
+	return helpers.ExpandHomePath(c.yaml.TemplateDir)
 }
