@@ -5,8 +5,8 @@ import (
 	"os"
 	"sync"
 
-	"github.com/go-yaml/yaml"
 	"github.com/mtricolici/file-hub-go/helpers"
+	"gopkg.in/yaml.v3"
 )
 
 const (

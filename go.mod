@@ -3,8 +3,8 @@ module github.com/mtricolici/file-hub-go
 go 1.20
 
 require (
-	github.com/go-yaml/yaml v2.1.0+incompatible
 	github.com/kataras/iris/v12 v12.2.0
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
@@ -62,5 +62,4 @@ require (
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	google.golang.org/protobuf v1.29.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
-	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
