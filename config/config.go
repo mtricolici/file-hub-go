@@ -21,7 +21,8 @@ type YamlConfigFile struct {
 		Interface string `yaml:"interface"`
 		Port      int    `yaml:"port"`
 	} `yaml:"listen"`
-	TemplateDir string `yaml:"template.dir"`
+	TemplatesDir string `yaml:"templates.dir"`
+	AssetsDir    string `yaml:"assets.dir"`
 }
 
 type Config struct {
@@ -78,5 +79,9 @@ func (c *Config) ListenPort() int {
 }
 
 func (c *Config) TemplatesDir() string {
-	return helpers.ExpandHomePath(c.yaml.TemplateDir)
+	return helpers.ExpandHomePath(c.yaml.TemplatesDir)
+}
+
+func (c *Config) AssetsDir() string {
+	return helpers.ExpandHomePath(c.yaml.AssetsDir)
 }

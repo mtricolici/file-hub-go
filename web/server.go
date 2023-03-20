@@ -44,8 +44,9 @@ func InitAndStart() {
 
 	app.Use(sess.Handler())
 
-	// Register HTML templates
+	// set templates and assets directory
 	app.RegisterView(iris.HTML(config.Get().TemplatesDir(), ".html"))
+	app.HandleDir("/assets", iris.Dir(config.Get().AssetsDir()))
 
 	registerControllers(app)
 	startWebServer(app)
