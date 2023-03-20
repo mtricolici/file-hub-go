@@ -1,20 +1,37 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en" >
 <head>
-	<title>Login</title>
+  <meta charset="UTF-8">
+  <title>FileHub - login</title>
+  <link rel="stylesheet" href="/assets/css/login.css">
+
 </head>
 <body>
-	{{if .Error}}
-		<div style="color: red">{{.Error}}</div>
-	{{end}}
-	<form method="POST" action="/login">
-		<label for="username">Username:</label>
-		<input type="text" id="username" name="username"><br>
-
-		<label for="password">Password:</label>
-		<input type="password" id="password" name="password"><br>
-
-		<input type="submit" value="Login">
-	</form>
+<div class="wrapper">
+	<div class="container">
+		<h1>Welcome</h1>
+		
+		<form class="form" method="post" action="/login">
+			<input type="text" id="username" placeholder="Username">
+			<input type="password" id="password" placeholder="Password">
+			<button type="submit" id="login-button">Login</button>
+		</form>
+	</div>
+	
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+  <script src='/assets/js/jquery-3.6.4.min.js'></script><script  src="/assets/js/login.js"></script>
 </body>
 </html>
